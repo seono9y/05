@@ -8,26 +8,27 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    int num1, num2;
-    char operator;
-    int result;
-
-    printf("두 개의 정수와 연산자를 입력하세요 : ");
-    scanf("%d %c %d", &num1, &operator, &num2);
-
-    if (operator == '+') {
-        result = num1 + num2;
-    } else if (operator == '-') {
-        result = num1 - num2;
-    } else if (operator == '*') {
-        result = num1 * num2;
-    } else if (operator == '/') {
-        if (num2 != 0) {
-            result = num1 / num2;
+    int answer = 59;
+    int guess;
+    int attempts = 1;
+    
+    printf("정답을 추측하세요: ");
+    scanf("%d", &guess);
+    
+    while (guess != answer) {
+        attempts++;
+        
+        if (guess > answer) {
+            printf("정답보다 큽니다.\n");
+        } else {
+            printf("정답보다 작습니다.\n");
         }
+        
+        printf("정답을 추측하세요: ");
+        scanf("%d", &guess);
     }
-
-    printf("%d %c %d = %d\n", num1, operator, num2, result);
-
+    
+    printf("정답을 맞췄습니다! 시도 횟수: %d\n", attempts);
+    
     return 0;
 }
