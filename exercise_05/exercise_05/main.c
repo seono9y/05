@@ -8,18 +8,16 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    int num;
+    int a;
 
     printf("정수를 입력하세요: ");
-    scanf("%d", &num);
+    scanf("%d", &a);
 
-    if (num > 0) {
-        printf("입력된 숫자는 양수입니다.\n");
-    } else if (num < 0) {
-        printf("입력된 숫자는 음수입니다.\n");
-    } else {
-        printf("입력된 숫자는 0입니다.\n");
+    if (a < 0) {
+        a = -a;
     }
+
+    printf("입력된 숫자의 절대값은 %d 입니다.\n", a);
 
     return 0;
 }
