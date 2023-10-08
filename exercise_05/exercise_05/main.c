@@ -8,16 +8,18 @@
 #include <stdio.h>
 
 int main(int argc, const char * argv[]) {
-    int a;
+    char c;
+    int numCount = 0;
 
-    printf("정수를 입력하세요: ");
-    scanf("%d", &a);
+    printf("문자열을 입력하세요 : ");
 
-    if (a < 0) {
-        a = -a;
+    while ((c = getchar()) != '\n') {
+        if (c >= '0' && c <= '9') {
+            numCount++;
+        }
     }
 
-    printf("입력된 숫자의 절대값은 %d 입니다.\n", a);
+    printf("입력된 문자열 내에 숫자의 개수는 %d개 입니다.\n", numCount);
 
     return 0;
 }
